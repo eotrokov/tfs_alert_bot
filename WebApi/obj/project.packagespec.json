@@ -1,0 +1,56 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/evgenijotrokov/Desktop/tfs_alert_bot/WebApi/WebApi.csproj",
+    "projectName": "WebApi",
+    "projectPath": "/Users/evgenijotrokov/Desktop/tfs_alert_bot/WebApi/WebApi.csproj",
+    "outputPath": "/Users/evgenijotrokov/Desktop/tfs_alert_bot/WebApi/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp3.0"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp3.0": {
+        "projectReferences": {
+          "/Users/evgenijotrokov/Desktop/tfs_alert_bot/Bot/Bot.csproj": {
+            "projectPath": "/Users/evgenijotrokov/Desktop/tfs_alert_bot/Bot/Bot.csproj"
+          },
+          "/Users/evgenijotrokov/Desktop/tfs_alert_bot/Model/Model.csproj": {
+            "projectPath": "/Users/evgenijotrokov/Desktop/tfs_alert_bot/Model/Model.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp3.0": {
+      "dependencies": {
+        "Telegram.Bot": {
+          "target": "Package",
+          "version": "[15.1.0, )"
+        }
+      },
+      "imports": [
+        "net461",
+        "net462",
+        "net47",
+        "net471",
+        "net472",
+        "net48"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}
