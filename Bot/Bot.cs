@@ -1,23 +1,31 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Telegram.Bot;
 using Telegram.Bot.Args;
+using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 namespace Bot
 {
     public class Bot
     {
+        List<Chat> _chats = new List<Chat>();
         public TelegramBotClient BotClient;
 
         private Bot()
         {
-            Environment.SetEnvironmentVariable("Token", "1014817526:AAGC3EarTPI0d2HL8UTQ9mCnh2krzEf3UJg");
             BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("Token"));
             BotClient.OnMessage += BotClientOnOnMessage;
         }
 
         private void BotClientOnOnMessage(object sender, MessageEventArgs e)
         {
+            if (_chats.FirstOrDefault(c => c.Id == e.Message.Chat.Id) != null)
+            {
+                return;
+            }
+
             Console.WriteLine(e.Message.Chat.Id);
             Console.WriteLine(e.Message.Text);
             BotClient.SendTextMessageAsync(e.Message.Chat.Id,

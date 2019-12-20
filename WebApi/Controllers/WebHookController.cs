@@ -22,9 +22,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("{id}")]
-        public IActionResult Get(string id, [FromBody]Data data)
+        public IActionResult Get(string id, [FromBody]Content content)
         {
-            Bot.Bot.Instance.BotClient.SendTextMessageAsync(id, data.Message.Markdown, ParseMode.Markdown);
+            Bot.Bot.Instance.BotClient.SendTextMessageAsync(id, content.Message.Markdown, ParseMode.Markdown);
             return Ok(id);
         }
     }
