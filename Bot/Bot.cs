@@ -15,7 +15,7 @@ namespace Bot
 
         private Bot()
         {
-            BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("Token"));
+            BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("TOKEN"));
             BotClient.OnMessage += BotClientOnOnMessage;
         }
 
@@ -25,11 +25,11 @@ namespace Bot
             {
                 return;
             }
-
+            _chats.Add(e.Message.Chat);
             Console.WriteLine(e.Message.Chat.Id);
             Console.WriteLine(e.Message.Text);
             BotClient.SendTextMessageAsync(e.Message.Chat.Id,
-                $"привет, вот ссылка {Environment.GetEnvironmentVariable("HOST")}/bot{e.Message.Chat.Id}",
+                $"привет, вот ссылка {Environment.GetEnvironmentVariable("HOST")}/webhook/{e.Message.Chat.Id}",
                 ParseMode.Markdown);
         }
 
