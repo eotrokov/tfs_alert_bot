@@ -6,7 +6,7 @@ using Telegram.Bot.Args;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
-namespace Bot
+namespace TfsAlertBot.Notification.Telegram
 {
     public class Bot
     {
@@ -16,18 +16,17 @@ namespace Bot
         private Bot()
         {
             BotClient = new TelegramBotClient(Environment.GetEnvironmentVariable("TOKEN"));
-            BotClient.OnMessage += BotClientOnOnMessage;
+            BotClient.OnMessage += BotClientOnMessage;
         }
 
-        private void BotClientOnOnMessage(object sender, MessageEventArgs e)
+        private void BotClientOnMessage(object sender, MessageEventArgs e)
         {
             if (_chats.FirstOrDefault(c => c.Id == e.Message.Chat.Id) != null)
             {
                 return;
             }
+
             _chats.Add(e.Message.Chat);
-            Console.WriteLine(e.Message.Chat.Id);
-            Console.WriteLine(e.Message.Text);
             BotClient.SendTextMessageAsync(e.Message.Chat.Id,
                 $"привет, вот ссылка {Environment.GetEnvironmentVariable("HOST")}/webhook/{e.Message.Chat.Id}",
                 ParseMode.Markdown);

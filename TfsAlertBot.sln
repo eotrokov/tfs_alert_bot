@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{114F1F77-A6EC-45C2-8F32-ABA89C1F8B6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsAlertBot.WebApi", "TfsAlertBot.WebApi\TfsAlertBot.WebApi.csproj", "{114F1F77-A6EC-45C2-8F32-ABA89C1F8B6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{B4156C0F-3303-429B-A39C-1BC849350A2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsAlertBot.Model", "TfsAlertBot.Model\TfsAlertBot.Model.csproj", "{B4156C0F-3303-429B-A39C-1BC849350A2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot", "Bot\Bot.csproj", "{1E7EF2C1-EA04-43B2-89EF-35CA95901ABB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TfsAlertBot.Notification.Telegram", "TfsAlertBot.Notification.Telegram\TfsAlertBot.Notification.Telegram.csproj", "{1E7EF2C1-EA04-43B2-89EF-35CA95901ABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
